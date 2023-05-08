@@ -6,8 +6,8 @@ export function Ajax(props) {
         .then(json => cbSuccess(json))
         .catch(err => {
             let message = err.statusText || "Ocurrió un error al acceder a la API";
-            document.getElementById('app').innerHTML = `
-            <div class="error fade-in">
+            document.getElementById('root').innerHTML = `
+            <div class="error fade-in-fwd">
                 <h2>Error ${err.status}</h2>
                 <p>${message}</p>
             </div>`

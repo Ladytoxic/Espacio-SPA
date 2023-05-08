@@ -4,37 +4,26 @@
 <head>
     <title>Mi Pagina</title>
     <meta charset="UTF-8">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name=" theme-color" content="#e7562e">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="stylesheet" href="./src/assets/style/style.css">
     <link rel="shortcut icon" href="./src/assets/img/LadyToxic.png" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
-    <div id="app">
-        <header>
-            <nav>
-                <router-link class="router-link" to="/"><img :src="info.img" :alt="info.titulo"></router-link>
-                <button id="menu" aria-label="Abrir menú"><i class="bi bi-list"></i></button>
-                <ul class="no-visible menu">
-                    <li><router-link class="router-link" to="/">Home</router-link></li>
-                    <li><router-link class="router-link" to="/actividades">Actividades</router-link></li>
-                    <li><router-link class="router-link" to="/eventos">Eventos</router-link></li>
-                </ul>
-            </nav>
-            <h1>{{info.titulo}}</h1>
-        </header>
-        <main>
-            <router-view></router-view>
-        </main>
-        <footer>
-            <h4>Creado por {{info.author}} | Todos los derechos reservados.</h4>
-        </footer>
-    </div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js"></script>
-    <script src="./src/index.js" type="module"></script>
-    <script src="./src/main.js"></script>
+    <div id="root"></div>
+    <footer>
+        <h4>Creado por {author} | Todos los derechos reservados.</h4>
+    </footer>
+
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js"></script> -->
+    <!-- <script src="./src/index.js" type="module"></script> -->
+    <script src="./src/main.js" type="module"></script>
 </body>
 
 </html>
