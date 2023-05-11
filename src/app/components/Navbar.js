@@ -10,8 +10,8 @@ export function Navbar() {
             <li><a href="#/">Home</a></li>
             <li><a href="#/actividades">Actividades</a></li>
             <li><a href="#/eventos">Eventos</a></li>
-        </ul>
-    `;
+            <li><a href="#/recursos">Recursos</a></li>
+        </ul>`;
 
     // Añadir evento click al botón del menú
     const menuButton = $navbar.querySelector("#menu");

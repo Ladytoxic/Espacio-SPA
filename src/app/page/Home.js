@@ -1,26 +1,19 @@
-import { Navbar } from '../components/Navbar.js'
-import { generarCarousel, data } from '../components/Carousel.js';
-import { Ajax } from '../helpers/Ajax.js';
-import Api from '../helpers/Firebase-api.js'
+import { Navbar } from '../components/Navbar.js';
 import { crearCards } from '../helpers/CrearCards.js';
+import { Alert } from '../components/Alert.js';
+import { firebase } from '../helpers/FirebaseData.js';
 
-export function Home() {
+export async function Home() {
     const $root = document.getElementById('root');
     $root.innerHTML = '';
+    $root.appendChild(Alert())
     $root.appendChild(Navbar());
-    const $carouselContainer = document.createElement('div');
-    $carouselContainer.id = 'carousel-container';
-    $root.appendChild($carouselContainer);
-    $carouselContainer.innerHTML = generarCarousel(data);
+    const $section = document.createElement('section');
+    $section.classList.add('cards');
     const $main = document.createElement('main');
-    $main.classList.add('cards');
+    $main.appendChild($section);
     $root.appendChild($main);
-
-    Ajax({
-        url: Api.URL,
-        cbSuccess: (res) => {
-            let data = res.talleres.area_1;
-            crearCards(data);
-        }
-    });
+    const data = await firebase('/Laterraza/talleres/0/');
+    console.log(data)
+    crearCards(data);
 }
