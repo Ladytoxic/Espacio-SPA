@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Lato', sans-serif;
     letter-spacing: 1px;
 }
 
@@ -35,12 +35,24 @@ body {
 }
 
 header {
+    position: relative;
     color: #ecebec;
-    text-align: center;
-    background-color: #2c3357;
+    background-color: #000000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-height: 90vh;
     animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
 
+h1 {
+    transition: all 0.3s;
+    margin: auto;
+    font-size: 3rem;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h1 .prop {
+    color: #d400ff;
 }
 
 nav {
@@ -54,6 +66,7 @@ nav {
     flex-wrap: wrap;
     padding: 0.3rem 1rem;
     z-index: 100;
+    margin: none;
 }
 
 nav img {
@@ -94,82 +107,51 @@ a:hover {
     color: antiquewhite;
 }
 
-.carousel {
-    background-color: #2c3357;
-    position: relative;
-    transition: all 0.2s;
-    margin-bottom: 1rem;
-    animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-
-}
-
-.carousel figure {
-    background-color: black;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: background-image 0.5s ease-out;
+.carousel { 
     width: 100%;
-    height: 400px;
-}
-
-.carousel.is-transitioning figure {
-    transition: background-image 0.5s ease-in-out;
-}
-
-.carousel ul {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 1rem;
-    transition: all 0.3s;
-}
-
-.image-list li {
-    display: inline-block;
-    margin: 0 5px;
-    width: 1rem;
-    height: 1rem;
-    background-color: #ccc;
-    border: 1px solid #2c3357b6;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.image-list li.active {
-    background-color: #333333de;
-    color: #fff;
-}
-
-.image-list li.active,
-.image-list li:hover {
-    background-color: #2c3357;
-}
-
-.image-list li.is-transitioning {
-    transition: background-color
-}
-
-.carousel .buttons {
+    height: 500px;
+    margin:auto;
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    z-index: 1;
 }
 
-.prev,
-.next {
-    color: #2c3357;
-    font-size: 2rem;
-    width: 4rem;
-    height: 12rem;
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel img {
+    transition: all 0.2s;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+
+.carousel button {
     background: none;
     border: none;
-    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    color: #fff;
+
+}
+
+.btn_prev {
+    left: 0.2rem;
+    z-index: 3;
+    transform: translateY(50%);
+}
+
+.btn_next {
+    right: 0.2rem;
+    z-index: 3;
+    transform: translateY(-50%);
+
 }
 
 main {
@@ -210,6 +192,8 @@ main {
 }
 
 .card h3 {
+    margin: auto;
+    height: 4rem;
     color: rgb(255, 60, 0);
 }
 
@@ -264,14 +248,15 @@ main {
 }
 
 .details img {
+    border-radius: 0.5rem;
     width: 100%;
-    height: 50vh;
-    object-fit: contain;
+    height: 40vh;
+    object-fit: cover;
 }
 
 .details .whatsapp {
     text-align: center;
-    color: rgb(69, 219, 31);
+    color: rgb(32, 160, 0);
 }
 
 .redes_sociales {
@@ -284,10 +269,11 @@ main {
 .redes_sociales a {
     text-decoration: none;
     color: #2c3357b6;
+    font-size: 1.5rem;
 }
 
 .redes_sociales a:hover {
-    color: #bb0101;
+    color: aquamarine;
 }
 
 
